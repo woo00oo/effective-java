@@ -1,9 +1,8 @@
 package com.example.effectivejava.chapter01.item01;
 
-import java.util.Arrays;
-import java.util.EnumMap;
-import java.util.HashMap;
-import java.util.Map;
+import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 /*
     이름을 가질 수 있다.(동일한 시그니처의 생성자를 두개 가질 수 없다.)
@@ -53,6 +52,22 @@ public class Order {
         Map<OrderStatus, Order> enumMap = new EnumMap<>(OrderStatus.class);
 
         enumMap.put(OrderStatus.DELIVERED, order);
+
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(100);
+        numbers.add(20);
+        numbers.add(44);
+        numbers.add(3);
+
+        System.out.println(numbers);
+
+        Comparator<Integer> desc = (o1, o2) -> 02 - 01;
+
+        numbers.sort(desc.reversed());
+
+        System.out.println(numbers);
+
+
 
     }
 
