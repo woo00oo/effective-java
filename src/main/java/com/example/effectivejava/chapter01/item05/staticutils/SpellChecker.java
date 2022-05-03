@@ -1,0 +1,23 @@
+package com.example.effectivejava.chapter01.item05.staticutils;
+
+import com.example.effectivejava.chapter01.item05.DefaultDictionary;
+import com.example.effectivejava.chapter01.item05.Dictionary;
+
+import java.util.List;
+
+public class SpellChecker {
+
+    private static final Dictionary dictionary = new DefaultDictionary();
+
+    private SpellChecker() {}
+
+    public static boolean isValid(String word) {
+        // SpellChecker 코드
+        return dictionary.contains(word);
+    }
+
+    public static List<String> suggestions(String typo) {
+        // SpellChecker 코드
+        return dictionary.closeWordsTo(typo);
+    }
+}
