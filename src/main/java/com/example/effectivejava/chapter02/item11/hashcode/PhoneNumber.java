@@ -1,6 +1,7 @@
 package com.example.effectivejava.chapter02.item11.hashcode;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 // equals를 재정의하면 hashCode로 재정의해야 함을 보여준다. (70-71쪽)
@@ -52,12 +53,15 @@ public class PhoneNumber {
     // 해시코드를 지연 초기화하는 hashCode 메서드 - 스레드 안정성까지 고려해야 한다. (71쪽)
     private volatile int hashCode; // 자동으로 0으로 초기화된다.
 
+    private Hashtable<PhoneNumber, String> phoneNumberStringHashtable;
+
+
     @Override public int hashCode() {
         if (this.hashCode != 0) {
             return hashCode;
         }
 
-        synchronized (this) {
+        synchronized (this) { // 특정한 영역을 임계 영역으로 지정
             int result = hashCode;
             if (result == 0) {
                 result = Short.hashCode(areaCode);
