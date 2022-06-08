@@ -18,6 +18,7 @@ public class HashTable implements Cloneable {
             this.next = new Entry(key, value, null);
         }
 
+        // 재귀 호출은 권장 하지 않음.
 //        public Entry deepCopy() {
 //            return new Entry(key, value, next == null ? null : next.deepCopy());
 //        }
