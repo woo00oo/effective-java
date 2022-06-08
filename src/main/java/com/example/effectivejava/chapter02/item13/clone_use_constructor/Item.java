@@ -9,10 +9,20 @@ public class Item implements Cloneable {
      * super.clone()을 호출하여야 함.
      * @Return
      */
+//    @Override
+//    public Item clone() {
+//        Item item = new Item(); 생성자로 clone을 구현하면 안됨.
+//        item.name = this.name;
+//        return item;
+//    }
+
     @Override
     public Item clone() {
-        Item item = new Item();
-        item.name = this.name;
-        return item;
+        try {
+            return (Item) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
+
 }

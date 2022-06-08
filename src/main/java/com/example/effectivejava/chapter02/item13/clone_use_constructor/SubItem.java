@@ -6,6 +6,7 @@ public class SubItem extends Item implements Cloneable {
 
     /**
      * 상위 타입을 하위 타입으로 형변환 할 수 없음.
+     * 하위 타입은 상위 타입으로 형변환 가능.
      */
     @Override
     public SubItem clone() {
