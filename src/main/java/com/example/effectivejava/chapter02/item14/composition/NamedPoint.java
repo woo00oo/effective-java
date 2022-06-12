@@ -23,3 +23,8 @@ public class NamedPoint implements Comparable<NamedPoint> {
         return result;
     }
 }
+
+/**
+ * 상속을 하는 순간 equals 규약이 깨지게 된다.
+ * equals 규약을 지키면서 확장을 하기 위해서는 컴포지션을 사용하자.
+ */

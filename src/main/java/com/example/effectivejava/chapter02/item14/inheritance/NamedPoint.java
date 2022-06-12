@@ -13,6 +13,15 @@ public class NamedPoint extends Point {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "NamedPoint{" +
+                "name='" + name + '\'' +
+                ", x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
     public static void main(String[] args) {
         NamedPoint p1 = new NamedPoint(1, 0, "keesun");
         NamedPoint p2 = new NamedPoint(1, 0, "whiteship");
