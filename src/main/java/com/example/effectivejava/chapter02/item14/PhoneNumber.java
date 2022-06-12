@@ -82,10 +82,11 @@ public class PhoneNumber implements Cloneable, Comparable<PhoneNumber> {
     }
 
     // 코드 14-3 비교자 생성 메서드를 활용한 비교자 (92쪽)
+    // static 메서드를 활용해서 Comparator 인스턴스를 생성 할 수 있다.
     private static final Comparator<PhoneNumber> COMPARATOR =
-            comparingInt((PhoneNumber pn) -> pn.areaCode)
-                    .thenComparingInt(pn -> pn.getPrefix())
-                    .thenComparingInt(pn -> pn.lineNum);
+            Comparator.comparingInt((PhoneNumber pn) -> pn.areaCode)
+                    .thenComparingInt(PhoneNumber::getPrefix)
+                    .thenComparingInt(PhoneNumber::getLineNum);
 //
 //    @Override
 //    public int compareTo(PhoneNumber pn) {
